@@ -1,7 +1,9 @@
 .container {
-  padding: 0 2rem;
-  margin-top: 20%;
-  margin-left: 45%;
+  padding: 5%;
+  margin-top: 10%;
+  margin-left: 25%;
+  margin-right: 20%;
+  border: 1px solid black;
   
 }
 
