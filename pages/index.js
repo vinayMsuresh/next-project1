@@ -5,18 +5,13 @@ import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 import Image from 'next/image';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
-const styles1=theme=>({
-  TextField:{
-    color:'white'
-  },
-  input: {
-    color: 'white'
-}
-})
+
 export default function Home() {
   const [email,setEmail]=useState();
   const [password,setPassword]=useState();
+  const router=useRouter()
 
   const handleSignIn = async() => {
     const payload = {email, password};
@@ -25,6 +20,7 @@ export default function Home() {
     console.log(response.data)
     } catch(e) {
       console.log(e);
+      alert(e.response.data)
     }
   }
   const handleSignUp = async() => {
@@ -35,6 +31,9 @@ export default function Home() {
     } catch(e) {
       console.log(e);
     }
+  }
+  const handleregister=()=>{
+    router.push('/user/registration')
   }
   return (
     <Grid container direction='row' >
@@ -62,14 +61,10 @@ export default function Home() {
        type="email"
         size="small"
         value={email}
-        className={styles1.TextField}
         name='email'
         onChange={(e) => setEmail(e.target.value)}
         error={email === ""}
         helperText={email === "" ? 'Empty field!' : ' '}
-        InputProps={{
-          className: styles1.input,
-      }}
       />
       <TextField
       name="password"
@@ -82,6 +77,7 @@ export default function Home() {
       />
       <Button variant='contained' onClick={handleSignIn}>Sign In</Button>
       <Button variant='contained' onClick={handleSignUp}>SignUp</Button>
+      <Button variant='contained' onClick={handleregister}>Register</Button>
     </Stack>
     
     </div>
