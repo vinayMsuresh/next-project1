@@ -4,6 +4,7 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 import Image from 'next/image';
+import axios from 'axios';
 
 const styles1=theme=>({
   TextField:{
@@ -16,6 +17,25 @@ const styles1=theme=>({
 export default function Home() {
   const [email,setEmail]=useState();
   const [password,setPassword]=useState();
+
+  const handleSignIn = async() => {
+    const payload = {email, password};
+    try{
+    const response = await axios.post('/api/admin/signin', payload);
+    console.log(response.data)
+    } catch(e) {
+      console.log(e);
+    }
+  }
+  const handleSignUp = async() => {
+    const payload = {email, password};
+    try{
+    const response = await axios.post('/api/admin/register', payload);
+    console.log(response.data)
+    } catch(e) {
+      console.log(e);
+    }
+  }
   return (
     <Grid container direction='row' >
       <Grid item md={6} sx={{mt:5,p:5}}>
@@ -60,8 +80,8 @@ export default function Home() {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <Button variant='contained'>Sign In</Button>
-      <Button variant='contained'>SignUp</Button>
+      <Button variant='contained' onClick={handleSignIn}>Sign In</Button>
+      <Button variant='contained' onClick={handleSignUp}>SignUp</Button>
     </Stack>
     
     </div>

@@ -24,7 +24,7 @@ const login = async(req, res) => {
         if (adminData) {
             if( bcrypt.compareSync(req.body.password, adminData.password) ) {
                 const payload = { aid: adminData.email };
-                const token = jwt.sign(payload, jwtsecret,{expiresIn:3600000})
+                const token = jwt.sign(payload, process.env.jwtSecret,{expiresIn:3600000})
                 res.status(201).json({message: 'Logged in succcessfully', token});
             }
             else {
