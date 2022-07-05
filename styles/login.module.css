@@ -1,0 +1,28 @@
+.heading {
+    text-align: center;
+    margin-top: 10%;
+}
+
+.body {
+    text-align: center;
+    margin-top: 5%;
+}
+.form {
+    width: 70%;
+    align-items: center;
+    background-color: white;
+    padding: 5%;
+    margin-top: 2%;
+    margin-left: 15%;
+}
+
+.fields {
+    width: 70%;
+    height: 30px;
+    margin: 5%;
+}
+
+.btn {
+    margin: 5%;
+    width: 50%;
+}
