@@ -1,5 +1,6 @@
-const transporter=require('./transportor')
+const transporter=require('./transpotor')
 const userModel=require('../../db/models/user')
+const config=require('../config')
 
 function sendUsermail(body){
   const mailOptions={
