@@ -1,5 +1,5 @@
 const joi=require('joi');
-
+import { NextResponse } from "next/server";
 function registrationvalidation(req,res,next){
     const schema=joi.object({
         first_name: joi.string().min(4).required(),
@@ -16,12 +16,12 @@ function registrationvalidation(req,res,next){
         return res.json({status_code: 406, msg: error.message});
     }
     else{
-        next();
+        return NextResponse.next();
     }
 
 }
 function loginvalidation(req,res,next){
-    const schema=jpoi.object({
+    const schema=joi.object({
         email:joi.string().email().required(),
         password:joi.string().min(8).required()
     })
@@ -31,7 +31,7 @@ function loginvalidation(req,res,next){
         return res.json({status_code: 406, msg: error.message});
     }
     else{
-        next();
+        return NextResponse.next();
     }
 }
 module.exports={registrationvalidation,loginvalidation};

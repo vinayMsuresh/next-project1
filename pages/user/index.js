@@ -1,10 +1,22 @@
 import { Button, Grid, Stack, TextField, Typography } from '@mui/material'
+import axios from 'axios';
 import React, { useState } from 'react'
 import styles from '../../styles/login.module.css'
 
 export default function Login() {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
+  const Handlelogin=async()=>{
+    let  data={email,password}
+    console.log(data)
+    try{
+      const response=await axios.post('/api/user/userlogin',data)
+      console.log(response)
+      alert(response.data.msg)
+    }catch(e){
+      alert(e)
+    }
+  }
   return (
     <Stack spacing={5}>
         <Grid container direction='row'>
@@ -28,7 +40,7 @@ export default function Login() {
                     placeholder='Enter Password'
                     onChange={e => setPassword(e.target.value)}
                   />
-                  <Button variant='contained' color='success' className={styles.btn}>Login</Button>
+                  <Button variant='contained' color='success' className={styles.btn} onClick={Handlelogin}>Login</Button>
                 </Stack>
             </Grid>
         </Grid>

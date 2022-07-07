@@ -3,12 +3,17 @@
     color:white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: large;
-    margin-left: 12%;
+   text-align: center;
+    
 }
 .right{
     margin-top: 10%;
-    margin-right: 5%;
-    color: azure;
-    background-color: aqua;
+    color: black;
+    background-color: white;
     padding:5%;
+    width:90%;
+    text-align: center;
+}
+.spacing{
+    margin:2%;
 }

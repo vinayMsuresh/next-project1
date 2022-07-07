@@ -77,7 +77,7 @@ export default function Home() {
       />
       <Button variant='contained' onClick={handleSignIn}>Sign In</Button>
       <Button variant='contained' onClick={handleSignUp}>SignUp</Button>
-      <Button variant='contained' onClick={handleregister}>Register</Button>
+      <Button variant='contained' onClick={handleregister}>User Register</Button>
     </Stack>
     
     </div>
