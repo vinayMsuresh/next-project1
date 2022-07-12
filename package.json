@@ -6,9 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix project1 && npm run build --prefix project1"
-  },
+    "lint": "next lint"
+    },
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
